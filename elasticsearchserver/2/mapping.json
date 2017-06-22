@@ -1,0 +1,38 @@
+{
+    "book":{
+        ####"_index":{"enabled":true},"_id":{"index":"not_analyzed","store":"yes"},2.0以后不能要这行
+        "properties":{
+            "author":{
+                "type":"string"
+            },
+            "characters":{
+                "type":"string"
+            },
+            "copies":{
+                "type":"long",
+                "ignore_malformed":false
+            },
+            "otitle":{
+                "type":"string"
+            },
+            "tags":{
+                "type":"string"
+            },
+            "title":{
+                "type":"string"
+            },
+            "year":{
+                "type":"long",
+                "ignore_malformed":"false",
+                "index":"analyzed"
+            },
+            "available":{
+                "type":"boolean",
+                "index":"analyzed"
+            }
+        }
+    }
+}
+
+#先建索引 curl -XPUT 'localhost:9200/library'
+#删掉这行，使用curl -XPOST 'localhost:9200/library/book/_mapping' -d @mapping.json

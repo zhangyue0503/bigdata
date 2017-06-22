@@ -9,9 +9,7 @@ import org.apache.hadoop.mapred.*;
 import java.io.IOException;
 import java.util.Iterator;
 import java.util.StringTokenizer;
-/**
- * Created by Administrator on 2017/6/13.
- */
+
 public class WordCount {
 
     public static class Map extends MapReduceBase implements Mapper<LongWritable, Text, Text, IntWritable>{
